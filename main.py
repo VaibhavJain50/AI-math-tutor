@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-from langchain_core.messages import HumanMessage
+from langchain.schema import HumanMessage
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 # Your project files
 from langchain_rag import load_qa_chain
@@ -171,4 +172,5 @@ def is_math_question(query: str) -> bool:
     """
     result = classifier_llm.invoke(prompt).content.strip().upper()
     return result.startswith("Y")
+
 
