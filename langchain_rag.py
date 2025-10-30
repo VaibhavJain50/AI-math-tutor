@@ -6,7 +6,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain_groq import ChatGroq
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
@@ -89,5 +88,6 @@ If the context does NOT contain the information needed to answer, reply exactly 
         return_source_documents=True,
         chain_type_kwargs={"prompt": prompt_template}
     )
+
 
     return qa_chain
